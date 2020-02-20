@@ -4,6 +4,7 @@ package BOT;/*
 
 import BOT.Listener.*;
 import BOT.Objects.CommandManager;
+import BOT.Objects.SQL;
 import BOT.Objects.getYoutubeSearch;
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
@@ -35,6 +36,7 @@ public class App {
     public static TextChannel textChannel;
 
     public App() {
+        SQL sql = new SQL();
         date = new Date();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy/MM/dd aa hh:mm:ss z");
         Time = format1.format(date);

@@ -39,3 +39,4 @@ wrapper {
 }
 
 compileJava.options.encoding = 'UTF-8'
+compileJava.sourceCompatibility = '1.8'

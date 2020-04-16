@@ -54,26 +54,30 @@ public class getYoutubeSearch {
             br.close();
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(response.toString());
-            returns[0][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(0).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[0][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(0).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[1][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(1).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[1][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(1).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[2][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(2).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[2][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(2).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[3][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(3).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[3][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(3).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[4][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(4).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[4][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(4).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[5][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(5).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[5][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(5).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[6][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(6).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[6][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(6).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[7][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(7).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[7][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(7).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[8][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(8).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[8][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(8).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
-            returns[9][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(9).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
-            returns[9][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(9).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+            try {
+                returns[0][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(0).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[0][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(0).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[1][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(1).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[1][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(1).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[2][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(2).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[2][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(2).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[3][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(3).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[3][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(3).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[4][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(4).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[4][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(4).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[5][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(5).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[5][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(5).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[6][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(6).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[6][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(6).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[7][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(7).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[7][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(7).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[8][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(8).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[8][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(8).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+                returns[9][0] = element.getAsJsonObject().get("items").getAsJsonArray().get(9).getAsJsonObject().get("snippet").getAsJsonObject().get("title").getAsString();
+                returns[9][1] = element.getAsJsonObject().get("items").getAsJsonArray().get(9).getAsJsonObject().get("id").getAsJsonObject().get("videoId").getAsString();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return returns;
 
         } catch (IOException e) {

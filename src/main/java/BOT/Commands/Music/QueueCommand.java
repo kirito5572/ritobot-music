@@ -51,7 +51,9 @@ public class QueueCommand implements ICommand {
             minTrackCount = Math.min(queue.size(), (20 * (Integer.parseInt(joined) - 1)) + 1);
         }
         List<AudioTrack> tracks = new ArrayList<>(queue);
-        System.out.println(queue.size());
+        if(queue.size() < maxTrackCount) {
+            maxTrackCount = queue.size();
+        }
         if(minTrackCount >= queue.size()) {
             channel.sendMessage( "`" + Constants.PREFIX + "queue " + joined + "`는 비어있습니다.\n`" +
                     Constants.PREFIX + "queue " + (int)Math.ceil((queue.size() + 1) / 20.0) +
@@ -62,21 +64,25 @@ public class QueueCommand implements ICommand {
         EmbedBuilder builder = EmbedUtils.defaultEmbed()
                 .setTitle("현재 재생목록 (총합: " + (queue.size() - 1) + ") 페이지: " + joined);
         if(!queue.isEmpty()) {
+            AudioTrackInfo info = player.getPlayingTrack().getInfo();
+            builder.appendDescription(String.format(
+                    "현재 재생중: %s - %s\n",
+                    info.title,
+                    info.author
+            ));
             for (int i = minTrackCount; i < maxTrackCount; i++) {
-                AudioTrack track = tracks.get(i);
-                AudioTrackInfo info = track.getInfo();
-                if(i == 0) {
+                try {
+                    AudioTrack track = tracks.get(i);
+                    info = track.getInfo();
                     builder.appendDescription(String.format(
-                            "현재 재생중: %s - %s\n",
+                            (i) + ". %s - %s\n",
                             info.title,
                             info.author
                     ));
-                } else {
-                    builder.appendDescription(String.format(
-                            (i) + ". %s - %s\n",
-                              info.title,
-                            info.author
-                    ));
+
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    break;
                 }
             }
         }

@@ -55,8 +55,6 @@ public class SQL {
         url = "jdbc:mysql://" + endPoint.toString() + "/ritobotDB?serverTimezone=UTC";
         user = "admin";
         password = SQLPassword.toString();
-        System.out.println(url);
-        System.out.println(password);
         try {
             connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
@@ -70,7 +68,6 @@ public class SQL {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String queryString;
             queryString = "SELECT * FROM ritobot_config.bot_channel WHERE guildId=" + guildId;
-            System.out.println(queryString);
             statement = connection.createStatement();
             resultSet6 = statement.executeQuery(queryString);
             if (resultSet6.next()) {
@@ -85,4 +82,13 @@ public class SQL {
         }
         return return_data;
     }
+
+    public static void setConnection() {
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

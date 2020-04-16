@@ -102,8 +102,7 @@ public class App {
 
         try {
             logger.info("부팅");
-            JDA jda= new JDABuilder(AccountType.BOT)
-                    .setToken(TOKEN)
+            JDA jda= JDABuilder.createDefault(TOKEN)
                     .setAutoReconnect(true)
                     .addEventListeners(listener)
                     .build().awaitReady();
@@ -117,6 +116,7 @@ public class App {
 
             StackTraceElement[] eStackTrace = e.getStackTrace();
             StringBuilder a = new StringBuilder();
+            a.append(e.getMessage()).append("\n");
             for (StackTraceElement stackTraceElement : eStackTrace) {
                 a.append(stackTraceElement).append("\n");
             }

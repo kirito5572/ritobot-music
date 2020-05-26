@@ -53,7 +53,7 @@ public class SQL {
             logger.warn(a.toString());
         }
         url = "jdbc:mysql://" + endPoint.toString() + "/ritobotDB?serverTimezone=UTC";
-        user = "admin";
+        user = "ritobot";
         password = SQLPassword.toString();
         try {
             connection = DriverManager.getConnection(url, user, password);

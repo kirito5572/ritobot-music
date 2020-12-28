@@ -47,7 +47,7 @@ public class HelpCommand implements ICommand {
     }
 
     private void generateAndSendEmbed(@NotNull GuildMessageReceivedEvent event) {
-        EmbedBuilder builder = EmbedUtils.defaultEmbed().setTitle("명령어 리스트:");
+        EmbedBuilder builder = EmbedUtils.getDefaultEmbed().setTitle("명령어 리스트:");
 
         StringBuilder music = new StringBuilder();
         builder.appendDescription(App.getPREFIX() + getInvoke() + " <명령어>를 입력하면 명령어별 상세 정보를 볼 수 있습니다.");

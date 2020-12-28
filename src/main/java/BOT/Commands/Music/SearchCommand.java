@@ -56,7 +56,7 @@ public class SearchCommand implements ICommand {
                 for(int i = 0; i < 10; i++) {
                     builder.append(i + 1).append(". ").append(data[i][0]).append("\n");
                 }
-                EmbedBuilder builder1 = EmbedUtils.defaultEmbed()
+                EmbedBuilder builder1 = EmbedUtils.getDefaultEmbed()
                         .setTitle("검색 결과")
                         .setDescription(builder.toString());
 

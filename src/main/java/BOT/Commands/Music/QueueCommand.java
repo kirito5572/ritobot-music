@@ -61,7 +61,7 @@ public class QueueCommand implements ICommand {
 
             return;
         }
-        EmbedBuilder builder = EmbedUtils.defaultEmbed()
+        EmbedBuilder builder = EmbedUtils.getDefaultEmbed()
                 .setTitle("현재 재생목록 (총합: " + (queue.size() - 1) + ") 페이지: " + joined);
         if(!queue.isEmpty()) {
             AudioTrackInfo info = player.getPlayingTrack().getInfo();

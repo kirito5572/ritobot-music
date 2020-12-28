@@ -79,6 +79,7 @@ public class SQL {
         } catch (Exception e) {
             e.printStackTrace();
             return_data = "error";
+            setConnection();
         }
         return return_data;
     }
@@ -90,5 +91,4 @@ public class SQL {
             e.printStackTrace();
         }
     }
-
 }
